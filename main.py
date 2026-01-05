@@ -1,9 +1,19 @@
 import pandas as pd
  
-calories = {"Day 1": 1750, "Day 2": 2100, "Day 3": 1700}
+data = {"Name": ["SpongeBob", "Patrick", "Squidward"],
+        "Age": [30, 35, 50]}
 
-series = pd.Series(calories)
+df = pd.DataFrame(data)
+ 
+
+#Add a new column
+df["Job"] = ["Cook ", "NA", "Cashier"]
+
+# Add a new row 
+new_rows = pd.DataFrame([{"Name": "Sandy", "Age": 28, "Job": "Engineer"},f
+                        {"Name": "Eugene", "Age": 60, "Job": "Manager" }],
+                       index= ["Employee 4", "Employee 5"])
+df = pd.concat([df, new_rows])
 
 
-print(series[series >= 2000])
-
+print(df)
